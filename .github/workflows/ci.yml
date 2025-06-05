@@ -19,7 +19,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean verify
+        run: |
+          cd simple-api
+          mvn clean verify
 
   build-and-push-images:
     needs: test-backend
